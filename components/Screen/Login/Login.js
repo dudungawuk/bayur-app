@@ -10,7 +10,7 @@ import Google from "../../Images/google.png"
 
 const {width, height} = Dimensions.get('window');
 
-const COLORS = {primary: '#282534', white: '#fff'};
+const COLORS = {primary: '#282534', white: '#ffffff'};
 
 const Login = () =>{
     return(
