@@ -12,7 +12,7 @@ const {width, height} = Dimensions.get('window');
 
 const COLORS = {primary: '#282534', white: '#ffffff'};
 
-const Login = ({navigation}) =>{
+const Daftar = ({navigation}) =>{
     return(
         <SafeAreaView style={{flex:1,backgroundColor:'#fff'}}>
             <StatusBar backgroundColor={COLORS.primary}/>
@@ -20,14 +20,22 @@ const Login = ({navigation}) =>{
                     <Image source={Clouds} style={{width:'100%',zIndex:3}}/>
                     <View elevation={6} style={{height:'80%',backgroundColor:'#fff',width:'90%',zIndex:1,borderRadius:56
                     ,shadowColor: "#000000",shadowOpacity: 0.8,shadowRadius: 2,shadowOffset: {height: 1,width: 1}}}>
-                        <View style={{justifyContent:'space-between',flex:1,alignItems:'center',paddingHorizontal:'10%',paddingVertical:'5%'}}>
+                        <View style={{justifyContent:'space-between',flex:1,alignItems:'center',paddingHorizontal:'10%',paddingVertical:'5%',paddingBottom:30}}>
                             <View style={{alignItems:'center'}}>
                             <Image source={Profile}/>
-                            <Text style={{fontSize:18,fontWeight:'bold',color:'#000'}}>Masuk</Text>
+                            <Text style={{fontSize:18,fontWeight:'bold',color:'#000'}}>Daftar</Text>
+                            </View>
+                            <View style={{width:'100%',}}>
+                                <Text style={{fontSize:9,color:'#69BD43'}}>Nama Lengkap</Text>
+                                <TextInput style={{borderBottomWidth:1,paddingBottom:0,paddingLeft:0,paddingTop:5,borderColor:'#69BD43'}} placeholder="cth. Bayur Owner"></TextInput>
                             </View>
                             <View style={{width:'100%',}}>
                                 <Text style={{fontSize:9,color:'#69BD43'}}>Email</Text>
-                                <TextInput style={{borderBottomWidth:1,paddingBottom:0,paddingLeft:0,paddingTop:5,borderColor:'#69BD43'}} placeholder="JoinBayur@gmail.com"></TextInput>
+                                <TextInput style={{borderBottomWidth:1,paddingBottom:0,paddingLeft:0,paddingTop:5,borderColor:'#69BD43'}} placeholder="cth. JoinBayur@gmail.com"></TextInput>
+                            </View>
+                            <View style={{width:'100%',}}>
+                                <Text style={{fontSize:9,color:'#69BD43'}}>No. Hp</Text>
+                                <TextInput style={{borderBottomWidth:1,paddingBottom:0,paddingLeft:0,paddingTop:5,borderColor:'#69BD43'}} placeholder="cth. 0812XXXXXXXX"></TextInput>
                             </View>
                             <View style={{width:'100%'}}>
                             <View style={{width:'100%',justifyContent:'flex-end'}}>
@@ -35,30 +43,20 @@ const Login = ({navigation}) =>{
                                 <TextInput style={{position:'relative',borderBottomWidth:1,paddingBottom:0,paddingLeft:0,paddingTop:5,borderColor:'#69BD43'}} placeholder="********"></TextInput>
                                 <Image source={Eye} style={{position:'absolute',alignSelf:'flex-end'}}></Image>
                             </View>
-                            <Text style={{alignSelf:'flex-end',marginTop:10}}>Lupa Kata Sandi</Text>
                             </View>
-                            <View style={{width:'100%',alignItems:'center',justifyContent:'space-between',height:'40%'}}>
+                            <View style={{width:'100%',alignItems:'center',justifyContent:'space-between',height:'10%'}}>
                             <View>
-
-                                
                             </View>
-                            <TouchableOpacity onPress={() => navigation.replace('Home')} style={{padding:10,backgroundColor:'#69BD43',width:'100%',borderRadius:12,alignItems:'center'}}>
-                                <Text style={{fontSize:14,color:'#fff',fontWeight:'600'}}>Masuk</Text>
-                            </TouchableOpacity>
-                            <Text style={{marginBottom:-11,marginTop:-16}}>atau</Text>
-                            <View style={{flexDirection:'row',padding:10,backgroundColor:'#EE2626',width:'100%',borderRadius:12,alignItems:'center',justifyContent:'center'}}>
-                                <Image source={Google} style={{marginRight:10}}/>
-                                <Text style={{fontSize:14,color:'#fff',fontWeight:'600'}}>Masuk Dengan Google</Text>
-                            </View>
-                            <View style={{flexDirection:'row',padding:10,backgroundColor:'#56A4EC',width:'100%',borderRadius:12,alignItems:'center',justifyContent:'center'}}>
-                            <Image source={FB} style={{marginRight:10}}/>
-                                <Text style={{fontSize:14,color:'#fff',fontWeight:'600'}}>Masuk Dengan Google</Text>
-                            </View>
+                            </View>                            
+                            <View style={{padding:10,backgroundColor:'#69BD43',width:'100%',borderRadius:12,alignItems:'center'}}>
+                                <TouchableOpacity onPress={() => navigation.replace('Verifikasi')}>
+                                <Text style={{fontSize:14,color:'#fff',fontWeight:'600'}}>Daftar</Text>
+                                </TouchableOpacity>
                             </View>
                             <View style={{flexDirection:'row',fontSize:12,color:'#828282'}}>
-                                <Text>Belum Punya Akun? </Text>
-                                <TouchableOpacity onPress={() => navigation.replace('Daftar')}>
-                                <Text style={{fontWeight:'800'}}>Daftar</Text>
+                                <Text>Sudah Punya Akun? </Text>
+                                <TouchableOpacity onPress={() => navigation.replace('Login')}>
+                                <Text style={{fontWeight:'800'}}>Masuk</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -68,4 +66,4 @@ const Login = ({navigation}) =>{
         </SafeAreaView>
     )
 }
-export default Login
+export default Daftar
